@@ -160,4 +160,48 @@ const renderDrinks = () => {
 
     drinksContainer.append(drinks);
     menu.append(drinksContainer);
-}
+};
+
+const renderDesserts = () => {
+    const dessertsContainer = document.createElement("section");
+    const title = document.createElement("h3");
+    const desserts = document.createElement("div");
+
+    title.textContent = "Desserts";
+    dessertsContainer.append(title);
+
+    dessertMenu.forEach(dessert => {
+        createCard(dessert, desserts);
+    });
+
+    desserts.classList.add("card-container");
+    dessertsContainer.classList.add("desserts");
+
+    dessertsContainer.append(desserts);
+    menu.append(dessertsContainer);
+};
+
+const createCard = (submenu, container) => {
+    const card = document.createElement("div");
+        const menuTitle = document.createElement("div");
+        const img = document.createElement("img");
+        const name = document.createElement("h4");
+        const price = document.createElement("div");
+        const description = document.createElement("p");
+
+        card.classList.add("card");
+        img.classList.add("img");
+        menuTitle.classList.add("menu-title");
+        name.classList.add("name");
+        price.classList.add("price");
+        description.classList.add("description");
+
+        img.src = submenu.url;
+        name.textContent = submenu.name;
+        price.textContent = submenu.price;
+        description.textContent = submenu.description;
+
+        menuTitle.append(name, price);
+        card.append(img, menuTitle, description);
+        container.append(card);
+};
