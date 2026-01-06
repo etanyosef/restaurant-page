@@ -1,10 +1,12 @@
 // main dishes image
-import chickenTinola from "../img/chicken-tinola.jpg";
-import humba from "../img/humba.png";
-import bulad from "../img/bulad.png";
-import lechonKawali from "../img/lechon-kawali.png";
+import chickenTinola from "../img/dishes/chicken-tinola.jpg";
+import humba from "../img/dishes/humba.png";
+import bulad from "../img/dishes/bulad.png";
+import lechonKawali from "../img/dishes/lechon-kawali.png";
+import dinuguan from "../img/dishes/dinuguan.png";
 // drinks image
-
+import sikwate from "../img/drinks/sikwate.png";
+import salabat from "../img/drinks/salabat.png";
 // dessert image
 
 const mainDishesMenu = [
@@ -32,14 +34,26 @@ const mainDishesMenu = [
         price: "240",
         url: lechonKawali,
     },
+    {
+        name: "Pork Dinuguan",
+        description: "Pork Dinuguan is a bold and savory Filipino stew that’s rich, hearty, and deeply flavorful. Made with pork shoulder, pig’s blood, and green chili, it’s known for its dark, almost chocolaty appearance.",
+        price: "200",
+        url: dinuguan,
+    },
 ];
 
 const drinksMenu = [
     {
-
+        name: "Sikwate",
+        description: "Sikwate, or Chocolate de Batirol, is a treasured Filipino hot chocolate tradition crafted from pure cacao. Known as sikwa’te (“sik-wah-teh”) in Visayas and Mindanao (particularly Cebu), and tsokolate de batirol nationwide.",
+        price: "80",
+        url: sikwate,
     },
     {
-
+        name: "Salabat",
+        description: "Salabat is a traditional Filipino ginger tea that is known for its relaxing and amazing health benefits. It is commonly made by boiling ginger slices in water, occasionally with a mixture of honey, lemon, or other spices to increase the flavor and therapeutic effects.",
+        price: "50",
+        url: salabat,
     },
 ];
 
@@ -61,22 +75,26 @@ export const renderMenu = () => {
     content.append(title);
 
     renderMainDishes();
+
+    renderDrinks();
+
+    menu.classList.add("menu");
+    content.append(menu);
 }
 
 const renderMainDishes = () => {
     const mainDishesContainer = document.createElement("section");
-    const mainDishTitle = document.createElement("h3");  
-    const mainDishes = document.createElement("div");      
+    const title = document.createElement("h3");  
+    const mainDishes = document.createElement("div");    
 
-    // main dishes
-    mainDishTitle.textContent = "Main Dishes";
-    mainDishesContainer.append(mainDishTitle);
+    title.textContent = "Main Dishes";
+    mainDishesContainer.append(title);
 
     mainDishesMenu.forEach(dish => {
         const card = document.createElement("div");
         const menuTitle = document.createElement("div");
         const img = document.createElement("img");
-        const name = document.createElement("h3");
+        const name = document.createElement("h4");
         const price = document.createElement("div");
         const description = document.createElement("p");
 
@@ -97,15 +115,49 @@ const renderMainDishes = () => {
         mainDishes.append(card);
     });
 
-    menu.classList.add("menu");
     mainDishes.classList.add("card-container");
     mainDishesContainer.classList.add("main-dishes");
 
     mainDishesContainer.append(mainDishes);
     menu.append(mainDishesContainer);
-    content.append(menu);
 }
 
 const renderDrinks = () => {
+    const drinksContainer = document.createElement("section");
+    const title = document.createElement("h3");
+    const drinks = document.createElement("div");
 
+    title.textContent = "Drinks";
+    drinksContainer.append(title);
+
+    drinksMenu.forEach(drink => {
+        const card = document.createElement("div");
+        const menuTitle = document.createElement("div");
+        const img = document.createElement("img");
+        const name = document.createElement("h4");
+        const price = document.createElement("div");
+        const description = document.createElement("p");
+
+        card.classList.add("card");
+        img.classList.add("img");
+        menuTitle.classList.add("menu-title");
+        name.classList.add("name");
+        price.classList.add("price");
+        description.classList.add("description");
+
+        img.src = drink.url;
+        name.textContent = drink.name;
+        price.textContent = drink.price;
+        description.textContent = drink.description;
+
+        menuTitle.append(name, price);
+        card.append(img, menuTitle, description);
+        drinks.append(card);
+    });
+
+    drinks.classList.add("card-container");
+    drinksContainer.classList.add("drinks");
+
+    drinksContainer.append(drinks);
+    menu.append(drinksContainer);
 }
