@@ -1,4 +1,4 @@
-export const homepage = () => {
+export const renderHomepage = () => {
     const content = document.getElementById("content");
     const welcomeContainer = document.createElement("div");
     const welcome = document.createElement("h2");
