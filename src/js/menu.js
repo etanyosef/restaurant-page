@@ -8,6 +8,7 @@ import dinuguan from "../img/dishes/dinuguan.png";
 import sikwate from "../img/drinks/sikwate.png";
 import salabat from "../img/drinks/salabat.png";
 // dessert image
+import bukoHalo from "../img/dessert/buko-halo.png";
 
 const mainDishesMenu = [
     {
@@ -59,7 +60,10 @@ const drinksMenu = [
 
 const dessertMenu = [
     {
-
+        name: "Buko Halo-Halo",
+        description: "Buko halo or buko halo-halo is a combination of buko salad and halo-halo desserts, usually served directly on a coconut shell. It differs from halo-halo in the larger amount of coconut used.",
+        price: "120",
+        url: bukoHalo,
     },
 ];
 
@@ -77,6 +81,8 @@ export const renderMenu = () => {
     renderMainDishes();
 
     renderDrinks();
+
+    renderDesserts();
 
     menu.classList.add("menu");
     content.append(menu);
@@ -120,7 +126,7 @@ const renderMainDishes = () => {
 
     mainDishesContainer.append(mainDishes);
     menu.append(mainDishesContainer);
-}
+};
 
 const renderDrinks = () => {
     const drinksContainer = document.createElement("section");
