@@ -1,16 +1,16 @@
 import "./css/style.css";
-import { homepage } from "./js/homepage.js";
-import { menu } from "./js/menu.js";
-import { about } from "./js/about.js";
+import { renderHomepage } from "./js/homepage.js";
+import { renderMenu } from "./js/menu.js";
+import { renderAbout } from "./js/about.js";
 
 const homeBtn = document.getElementById("home-btn");
 const menuBtn = document.getElementById("menu-btn");
 const aboutBtn = document.getElementById("about-btn");
 
-homepage();
+renderHomepage();
 
-homeBtn.addEventListener("click", () => homepage());
-menuBtn.addEventListener("click", () => menu());
-aboutBtn.addEventListener("click", () => about());
+homeBtn.addEventListener("click", () => renderHomepage());
+menuBtn.addEventListener("click", () => renderMenu());
+aboutBtn.addEventListener("click", () => renderAbout());
 
 console.log("Hello World!");
