@@ -97,28 +97,7 @@ const renderMainDishes = () => {
     mainDishesContainer.append(title);
 
     mainDishesMenu.forEach(dish => {
-        const card = document.createElement("div");
-        const menuTitle = document.createElement("div");
-        const img = document.createElement("img");
-        const name = document.createElement("h4");
-        const price = document.createElement("div");
-        const description = document.createElement("p");
-
-        card.classList.add("card");
-        img.classList.add("img");
-        menuTitle.classList.add("menu-title");
-        name.classList.add("name");
-        price.classList.add("price");
-        description.classList.add("description");
-
-        img.src = dish.url;
-        name.textContent = dish.name;
-        price.textContent = dish.price;
-        description.textContent = dish.description;
-
-        menuTitle.append(name, price);
-        card.append(img, menuTitle, description);
-        mainDishes.append(card);
+        createCard(dish, mainDishes);
     });
 
     mainDishes.classList.add("card-container");
@@ -137,28 +116,7 @@ const renderDrinks = () => {
     drinksContainer.append(title);
 
     drinksMenu.forEach(drink => {
-        const card = document.createElement("div");
-        const menuTitle = document.createElement("div");
-        const img = document.createElement("img");
-        const name = document.createElement("h4");
-        const price = document.createElement("div");
-        const description = document.createElement("p");
-
-        card.classList.add("card");
-        img.classList.add("img");
-        menuTitle.classList.add("menu-title");
-        name.classList.add("name");
-        price.classList.add("price");
-        description.classList.add("description");
-
-        img.src = drink.url;
-        name.textContent = drink.name;
-        price.textContent = drink.price;
-        description.textContent = drink.description;
-
-        menuTitle.append(name, price);
-        card.append(img, menuTitle, description);
-        drinks.append(card);
+        createCard(drink, drinks);
     });
 
     drinks.classList.add("card-container");
@@ -189,25 +147,25 @@ const renderDesserts = () => {
 
 const createCard = (submenu, container) => {
     const card = document.createElement("div");
-        const menuTitle = document.createElement("div");
-        const img = document.createElement("img");
-        const name = document.createElement("h4");
-        const price = document.createElement("div");
-        const description = document.createElement("p");
+    const menuTitle = document.createElement("div");
+    const img = document.createElement("img");
+    const name = document.createElement("h4");
+    const price = document.createElement("div");
+    const description = document.createElement("p");
+    
+    card.classList.add("card");
+    img.classList.add("img");
+    menuTitle.classList.add("menu-title");
+    name.classList.add("name");
+    price.classList.add("price");
+    description.classList.add("description");
 
-        card.classList.add("card");
-        img.classList.add("img");
-        menuTitle.classList.add("menu-title");
-        name.classList.add("name");
-        price.classList.add("price");
-        description.classList.add("description");
-
-        img.src = submenu.url;
-        name.textContent = submenu.name;
-        price.textContent = submenu.price;
-        description.textContent = submenu.description;
-
-        menuTitle.append(name, price);
-        card.append(img, menuTitle, description);
-        container.append(card);
+    img.src = submenu.url;
+    name.textContent = submenu.name;
+    price.textContent = submenu.price;
+    description.textContent = submenu.description;
+    
+    menuTitle.append(name, price);
+    card.append(img, menuTitle, description);
+    container.append(card);
 };
