@@ -9,7 +9,7 @@ export const renderHomepage = () => {
 
     content.textContent = "";
 
-    welcome.textContent = "Welcome to Sagi's Carenderia!";
+    welcome.textContent = "Welcome to Sagit's Carenderia!";
     welcomePara.textContent = "Kaon namo dri kay lami kayo ni!";
     welcomeContainer.append(welcome);
     welcomeContainer.append(welcomePara);
