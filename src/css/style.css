@@ -26,6 +26,10 @@ body {
     margin: 0;
 }
 
+img {
+    width: 100%;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: TheCat, serif;
 }
@@ -39,7 +43,12 @@ h2 {
     margin: 10px 0;
 }
 h3 {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
+}
+
+h4 {
+    font-family: Dongle;
 }
 
 header {
@@ -59,8 +68,9 @@ nav button {
     border: none;
     background-color: transparent;
 }
-nav button.active {
-    border-bottom: 5px solid rgba(136, 136, 253, 0.708);
+nav button.active::before,
+nav button.active::after {
+    content: "😸";
 }
 nav button:hover {
     cursor: pointer;
@@ -102,4 +112,9 @@ nav button:hover {
 }
 .card-container .img {
     width: 100%;
+}
+
+.our-chef {
+    width: 500px;
+    margin: 0 auto;
 }
