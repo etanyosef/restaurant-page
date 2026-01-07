@@ -9,6 +9,7 @@ import sikwate from "../img/drinks/sikwate.png";
 import salabat from "../img/drinks/salabat.png";
 // dessert image
 import bukoHalo from "../img/dessert/buko-halo.png";
+import mangoFloat from "../img/dessert/mango-float.png";
 
 const mainDishesMenu = [
     {
@@ -65,14 +66,21 @@ const dessertMenu = [
         price: "120",
         url: bukoHalo,
     },
+    {
+        name: "Mango Float",
+        description: "Mango float or crema de mangga is a Filipino icebox cake dessert made with layers of graham cracker crust, whipped cream, condensed milk, and ripe carabao mangoes. It is chilled for a few hours before serving.",
+        price: "100",
+        url: mangoFloat,
+    },
 ];
 
-const content = document.getElementById("content");
 const menu = document.createElement("div");
 
 export const renderMenu = () => {
     // clear content div    
+    const content = document.getElementById("content");
     content.textContent = "";
+    menu.textContent = "";
     // add page title
     const title = document.createElement("h2");
     title.textContent = "Menu";
@@ -164,7 +172,7 @@ const createCard = (submenu, container) => {
     name.textContent = submenu.name;
     price.textContent = submenu.price;
     description.textContent = submenu.description;
-    
+
     menuTitle.append(name, price);
     card.append(img, menuTitle, description);
     container.append(card);
