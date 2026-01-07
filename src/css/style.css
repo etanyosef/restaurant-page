@@ -59,6 +59,9 @@ nav button {
     border: none;
     background-color: transparent;
 }
+nav button.active {
+    border-bottom: 5px solid rgba(136, 136, 253, 0.708);
+}
 nav button:hover {
     cursor: pointer;
 }
