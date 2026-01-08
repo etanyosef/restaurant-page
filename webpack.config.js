@@ -2,7 +2,7 @@ const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    mode: "development",
+    mode: "production",
     entry: "./src/index.js",
     output: {
         filename: "main.js",
@@ -38,9 +38,5 @@ module.exports = {
             },
         ],
     },
-    "scripts": {
-        "build": "webpack",
-        "dev": "webpack serve",
-        "deploy": "git subtree push --prefix dist origin gh-pages",
-    },
 };
+
